@@ -1,0 +1,16 @@
+<ActionBar [title]="market.name"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label [text]="'Location: ' + market.location" class="text-lg mb-2"></Label>
+    <Label text="Available Products:" class="text-lg font-bold mt-4 mb-2"></Label>
+    <GridLayout rows="auto" columns="*, *" class="mb-4">
+      <Label text="Product" class="font-bold" row="0" col="0"></Label>
+      <Label text="Price" class="font-bold" row="0" col="1"></Label>
+      <ng-container *ngFor="let product of market.products; let i = index">
+        <Label [text]="product" row="{{i+1}}" col="0" class="py-1"></Label>
+        <Label [text]="'$' + market.prices[product]" row="{{i+1}}" col="1" class="py-1"></Label>
+      </ng-container>
+    </GridLayout>
+  </StackLayout>
+</ScrollView>

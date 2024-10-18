@@ -1,0 +1,12 @@
+<ActionBar title="Farmers Markets"></ActionBar>
+
+<GridLayout>
+  <ListView [items]="markets">
+    <ng-template let-market="item">
+      <StackLayout [nsRouterLink]="['/market', market.id]" class="p-4">
+        <Label [text]="market.name" class="text-lg font-bold"></Label>
+        <Label [text]="'Location: ' + market.location" class="text-sm text-gray-500"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
